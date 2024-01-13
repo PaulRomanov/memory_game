@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import StartPage from '../components/StartPage.vue'
+import StartPage from '../pages/StartPage'
 
 const routes = [
   {
