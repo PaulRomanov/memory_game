@@ -49,5 +49,9 @@ button
   background-color: $green-color
   &:hover
     background-color: $green-color-hover
+.close
+  background-color: $red-color
+  &:hover
+    background-color: $red-color-hover
 
 </style>
