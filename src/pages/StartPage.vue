@@ -5,20 +5,34 @@
       game
     </h1>
     <p class="start-page__description">Click on the cards to find a match</p>
-    <button class="start-page__button">Start game</button>
+    <input
+      class="start-page__input-name"
+      type="text"
+      placeholder="Enter your name"
+      v-model="playerName"
+    />
+    <button class="start-page__button-create-payer" @click="createPlayer" :disabled="!playerName">
+      Create payer
+    </button>
   </div>
 </template>
 
 <script>
 export default {
   name: "StartPage",
-  created() {},
   data() {
-    return {};
+    return {
+      playerName: "",
+    };
   },
-  props: {},
-  methods: {},
+  methods: {
+    createPlayer() {
+      this.$store.dispatch('updatePlayerName', this.playerName);
+      this.$router.push({ name: 'GamePage' });
+    },
+  },
 };
+
 </script>
 
 <style lang="sass" scoped>
@@ -43,7 +57,19 @@ export default {
     font-size: 1.5rem
     color: $secondary-color
 
-  &__button
+  &__input-name
+    margin-top: 2rem
+    padding: 1rem 2rem
+    font-size: 1.5rem
+    border: none
+    border-radius: 0.5rem
+    transition: all 0.3s ease-in-out
+    background-color: $secondary-color
+    &:focus
+      outline: none
+      box-shadow: 0 0 0 2px $primary-color-hover
+
+  &__button-create-payer
     margin-top: 2rem
     padding: 1rem 2rem
     font-size: 1.5rem
@@ -52,7 +78,9 @@ export default {
     border-radius: 0.5rem
     cursor: pointer
     transition: all 0.3s ease-in-out
-    &:hover
+    &:not(:disabled):hover
       background-color: $primary-color-hover
-      
+  &__button-create-payer:disabled 
+    opacity: 0.5
+    cursor: not-allowed
 </style>

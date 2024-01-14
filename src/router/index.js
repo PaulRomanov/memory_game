@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import StartPage from '../pages/StartPage'
+import GamePage from '../pages/GamePage'
 
 const routes = [
   {
@@ -7,11 +8,11 @@ const routes = [
     name: 'StartPage',
     component: StartPage
   },
-  // {
-  //   path: '/about',
-  //   name: 'about',
-  //   component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
-  // }
+  {
+    path: '/GamePage',
+    name: 'GamePage',
+    component: GamePage
+  },
 ]
 
 const router = createRouter({
