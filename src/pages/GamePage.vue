@@ -6,24 +6,38 @@
       , choose a level and let's start the game.
     </h1>
     <div class="game-page__wrapper-buttons">
-      <button class="game-page__button-back" @click="backPage">
-        <img class="game-page__button-back-svg" src="../assets/img/arrow.png" alt="" />Back
-      </button>
-      <button class="game-page__button-start">Start Game</button>
-      <button class="game-page__button-rules">Game rules</button>
+      <ComponentButton type="primary" @click="backPage"
+        ><img
+          class="game-page__button-back-svg"
+          src="../assets/img/arrow.png"
+          alt="backPage"
+        />Back</ComponentButton
+      >
+      <ComponentButton type="start" @click="startGame">Start Game</ComponentButton>
+      <ComponentButton type="primary" @click="openRules">Game rules</ComponentButton>
     </div>
   </div>
 </template>
 
 <script>
+import ComponentButton from "../components/ComponentButton.vue";
 export default {
   name: "GamePage",
+  components: {
+    ComponentButton,
+  },
   data() {
     return {};
   },
   methods: {
     backPage() {
       this.$router.push({ name: "StartPage" });
+    },
+    startGame() {
+      console.log("startGame");
+    },
+    openRules() {
+      console.log("open rules");
     },
   },
   computed: {
@@ -59,27 +73,10 @@ export default {
     flex-wrap: wrap
     gap: 3rem
 
-  &__button-rules, &__button-start, &__button-back
-    margin-top: 1rem
-    padding: 1rem 2rem
-    font-size: 1.5rem
-    border: none
-    border-radius: 0.5rem
-    cursor: pointer
-    transition: all 0.3s ease-in-out
   &__button-back-svg
     width: 2.5rem
     height: 1.5rem
     margin-right: 1.5rem
     transform: rotate(180deg)
 
-  &__button-rules, &__button-back
-    background-color: $primary-color
-    &:hover
-      background-color: $primary-color-hover
-
-  &__button-start
-    background-color: $green-color
-    &:hover
-      background-color: $green-color-hover
 </style>

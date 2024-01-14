@@ -11,15 +11,17 @@
       placeholder="Enter your name"
       v-model="playerName"
     />
-    <button class="start-page__button-create-payer" @click="createPlayer" :disabled="!playerName">
-      Create payer
-    </button>
+    <ComponentButton type="primary" @click="createPlayer" :disabled="!playerName">Create payer</ComponentButton>
   </div>
 </template>
 
 <script>
+import ComponentButton from "../components/ComponentButton.vue";
 export default {
   name: "StartPage",
+  components: {
+    ComponentButton,
+  },
   data() {
     return {
       playerName: "",
@@ -69,18 +71,4 @@ export default {
       outline: none
       box-shadow: 0 0 0 2px $primary-color-hover
 
-  &__button-create-payer
-    margin-top: 2rem
-    padding: 1rem 2rem
-    font-size: 1.5rem
-    background-color: $primary-color
-    border: none
-    border-radius: 0.5rem
-    cursor: pointer
-    transition: all 0.3s ease-in-out
-    &:not(:disabled):hover
-      background-color: $primary-color-hover
-  &__button-create-payer:disabled 
-    opacity: 0.5
-    cursor: not-allowed
 </style>
