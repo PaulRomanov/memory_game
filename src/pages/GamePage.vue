@@ -16,18 +16,23 @@
       <ComponentButton type="start" @click="startGame">Start Game</ComponentButton>
       <ComponentButton type="primary" @click="openRules">Game rules</ComponentButton>
     </div>
+    <ModalWindowRules v-if="showModalRules" @close="closeModalRules" />
   </div>
 </template>
 
 <script>
 import ComponentButton from "../components/ComponentButton.vue";
+import ModalWindowRules from "../components/ModalWindowRules.vue";
 export default {
   name: "GamePage",
   components: {
     ComponentButton,
+    ModalWindowRules
   },
   data() {
-    return {};
+    return {
+      showModalRules: false,
+    };
   },
   methods: {
     backPage() {
@@ -37,7 +42,10 @@ export default {
       console.log("startGame");
     },
     openRules() {
-      console.log("open rules");
+      this.showModalRules = true;
+    },
+    closeModalRules() {
+      this.showModalRules = false;
     },
   },
   computed: {
