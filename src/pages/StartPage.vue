@@ -1,22 +1,25 @@
 <template>
   <div class="start-page">
     <h1 class="start-page__title">
-      <span class="start-page__title-item">Memory</span>
-      game
+      <span class="start-page__title-item">{{ $t("gameName") }}</span>
+      {{ $t("gameName2") }}
     </h1>
-    <p class="start-page__description">Click on the cards to find a match</p>
+    <p class="start-page__description">{{ $t("startTitle") }}</p>
     <input
       class="start-page__input-name"
       type="text"
-      placeholder="Enter your name"
+      :placeholder="$t('placeholder')"
       v-model="playerName"
     />
-    <ComponentButton type="primary" @click="createPlayer" :disabled="!playerName">Create payer</ComponentButton>
+    <ComponentButton type="primary" @click="createPlayer" :disabled="!playerName"
+      >{{ $t("buttons.createPayer") }}</ComponentButton
+    >
   </div>
 </template>
 
 <script>
 import ComponentButton from "../components/ComponentButton.vue";
+
 export default {
   name: "StartPage",
   components: {
@@ -27,21 +30,21 @@ export default {
       playerName: "",
     };
   },
+
   methods: {
     createPlayer() {
-      this.$store.dispatch('updatePlayerName', this.playerName);
-      this.$router.push({ name: 'GamePage' });
+      this.$store.dispatch("updatePlayerName", this.playerName);
+      this.$router.push({ name: "GamePage" });
     },
   },
 };
-
 </script>
 
 <style lang="sass" scoped>
 @import "@/assets/variables/colors"
 .start-page
-  width: 100vw
-  height: 100vh
+  width: 100%
+  height: 100%
   background-color: $primary-background-color
   display: flex
   justify-content: center
@@ -70,5 +73,4 @@ export default {
     &:focus
       outline: none
       box-shadow: 0 0 0 2px $primary-color-hover
-
 </style>

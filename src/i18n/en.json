@@ -1,0 +1,31 @@
+{
+  "startTitle": "Click on the cards to find a match",
+  "gameName": "Memory",
+  "gameName2": "game",
+  "placeholder": "Enter your name",
+  "welcome": {
+    "hello": "Hello, ",
+    "hello2": "! Choose a level and let's start the game."
+  },
+  "buttons": {
+    "createPayer": "Create player",
+    "startGame": "Start game",
+    "gameRules": "Game rules",
+    "back": "Back",
+    "close": "Close"
+  },
+  "rules": {
+    "rule1": "The Memory Game, also known as Match Match, is a classic board game in which players turn around picture cards and try to find pairs.",
+    "rule2": "Players can choose a difficulty level that determines the number of cards on the field:",
+    "rule3": "Easy: 4x4 (8 cards)",
+    "rule4": "Medium: 6x6 (18 cards)",
+    "rule5": "Difficult: 8x8 (32 cards)",
+    "rule6": "Players can choose the total time of the game.",
+    "rule7": "A player gets a certain total time to complete the entire game. Once the timer is counted down, the game ends.",
+    "rule8": "Each turn a player reveals two cards.",
+    "rule9": "If the images on the revealed cards match, the player gets points and the right to an additional turn.",
+    "rule10": "If the images do not match, the cards are returned face down.",
+    "rule11": "The goal of the game is to find all pairs of cards.",
+    "rule12": "The game ends when all pairs have been found or time has expired."
+  }
+}

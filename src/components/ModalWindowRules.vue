@@ -1,19 +1,19 @@
 <template>
   <div class="modal-window">
     <div class="modal-content">
-    <p> The Memory Game, also known as Match Match, is a classic board game in which players turn around picture cards and try to find pairs.</p>
-    <p>Players can choose a difficulty level that determines the number of cards on the field:</p>
-    <p>Easy: 4x4 (8 cards)</p>
-    <p>Medium: 6x6 (18 cards)</p>
-    <p>Difficult: 8x8 (32 cards)</p>
-    <p>Players can choose the total time of the game.</p>
-    <p>A player gets a certain total time to complete the entire game. Once the timer is counted down, the game ends.</p>
-    <p>Each turn a player reveals two cards.</p>
-    <p>If the images on the revealed cards match, the player gets points and the right to an additional turn.</p>
-    <p>If the images do not match, the cards are returned face down.</p>
-    <p>The goal of the game is to find all pairs of cards.</p>
-    <p>The game ends when all pairs have been found or time has expired.</p>
-    <ComponentButton type="close" @click="closeModal">Close</ComponentButton>
+    <p>{{ $t("rules.rule1") }}</p>
+    <p>{{ $t("rules.rule2") }}</p>
+    <p>{{ $t("rules.rule3") }}</p>
+    <p>{{ $t("rules.rule4") }}</p>
+    <p>{{ $t("rules.rule5") }}</p>
+    <p>{{ $t("rules.rule6") }}</p>
+    <p>{{ $t("rules.rule7") }}</p>
+    <p>{{ $t("rules.rule8") }}</p>
+    <p>{{ $t("rules.rule9") }}</p>
+    <p>{{ $t("rules.rule10") }}</p>
+    <p>{{ $t("rules.rule11") }}</p>
+    <p>{{ $t("rules.rule12") }}</p>    
+    <ComponentButton type="close" @click="closeModal">{{ $t("buttons.close") }}</ComponentButton>
     </div>
   </div>
 </template>

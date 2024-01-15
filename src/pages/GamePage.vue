@@ -1,9 +1,9 @@
 <template>
   <div class="game-page">
     <h1 class="game-page__title">
-      Hello
+      {{ $t("welcome.hello") }}
       <span class="game-page__title-item">{{ playerName }}</span>
-      , choose a level and let's start the game.
+      {{ $t("welcome.hello2") }}
     </h1>
     <div class="game-page__wrapper-buttons">
       <ComponentButton type="primary" @click="backPage"
@@ -11,10 +11,10 @@
           class="game-page__button-back-svg"
           src="../assets/img/arrow.png"
           alt="backPage"
-        />Back</ComponentButton
+        />{{ $t("buttons.back") }}</ComponentButton
       >
-      <ComponentButton type="start" @click="startGame">Start Game</ComponentButton>
-      <ComponentButton type="primary" @click="openRules">Game rules</ComponentButton>
+      <ComponentButton type="start" @click="startGame">{{ $t("buttons.startGame") }}</ComponentButton>
+      <ComponentButton type="primary" @click="openRules">{{ $t("buttons.gameRules") }}</ComponentButton>
     </div>
     <ModalWindowRules v-if="showModalRules" @close="closeModalRules" />
   </div>
